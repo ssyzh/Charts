@@ -54,7 +54,7 @@ open class RadarChartRenderer: LineRadarRenderer
                 self.accessibleChartElements.append(element)
             }
 
-            for set in radarData!.dataSets as! [IRadarChartDataSet] where set.isVisible
+            for case let set as IRadarChartDataSet in radarData!.dataSets where set.isVisible
             {
                 drawDataSet(context: context, dataSet: set, mostEntries: mostEntries)
             }

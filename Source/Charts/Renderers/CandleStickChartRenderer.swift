@@ -38,7 +38,7 @@ open class CandleStickChartRenderer: LineScatterCandleRadarRenderer
             accessibleChartElements.append(element)
         }
 
-        for set in candleData.dataSets as! [ICandleChartDataSet] where set.isVisible
+        for case let set as ICandleChartDataSet in candleData.dataSets where set.isVisible
         {
             drawDataSet(context: context, dataSet: set)
         }
